@@ -5,7 +5,7 @@ import styles from '@/styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home(props) {
   return (
     <>
       <Head>
@@ -15,6 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
+        <h2>{props.posts.length}</h2>
         <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
@@ -111,4 +112,22 @@ export default function Home() {
       </main>
     </>
   )
+}
+
+
+export async function getServerSideProps() {
+  // const res = await fetch(process.env.BACKEND_URI + "/api/post/all");
+  // console.log("res")
+  // let data = await res.json();
+  // console.log("data")
+  let data = [
+    {
+      "title": "Warping Through Space: The Alcubierre Drive and the Future of Interstellar Travel",
+      "excerpt": "With the Alcubierre drive, interstellar travel could become so commonplace that we'll need cosmic traffic cops to keep things moving.",
+      "slug": "warping-through-space-the-alcubierre-drive-and-the-future-of-interstellar-travel",
+      "feature_image": "https://digitalpress.fra1.cdn.digitaloceanspaces.com/tpog1t4/2023/12/1688014274203.webp",
+      "published_at": "2023-12-08T23:00:00.000+05:30",
+    }
+  ]
+  return { props: { posts: data } };
 }
