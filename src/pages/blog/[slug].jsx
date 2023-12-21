@@ -55,7 +55,7 @@ export default function Post(props) {
 
 // export const runtime = 'experimental-edge';
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const post_slug = params.slug;
   // const ghost_key = process.env.GHOST_CONTENT_API_KEY;
   // const ghost_url = process.env.GHOST_URL;
@@ -67,21 +67,21 @@ export async function getStaticProps({ params }) {
   return { props: data };
 }
 
-export async function getStaticPaths() {
-  const ghost_key = process.env.GHOST_CONTENT_API_KEY;
-  const ghost_url = process.env.GHOST_URL;
-  const res = await fetch(
-    `${ghost_url}/ghost/api/content/posts?key=${ghost_key}`
-  );
-  const data = await res.json();
-  return {
-    paths: data.posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      };
-    }),
-    fallback: "blocking",
-  };
-}
+// export async function getStaticPaths() {
+//   const ghost_key = process.env.GHOST_CONTENT_API_KEY;
+//   const ghost_url = process.env.GHOST_URL;
+//   const res = await fetch(
+//     `${ghost_url}/ghost/api/content/posts?key=${ghost_key}`
+//   );
+//   const data = await res.json();
+//   return {
+//     paths: data.posts.map((post) => {
+//       return {
+//         params: {
+//           slug: post.slug,
+//         },
+//       };
+//     }),
+//     fallback: "blocking",
+//   };
+// }
