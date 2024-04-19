@@ -15,8 +15,8 @@ const contactData = [
   },
   {
     name: 'Mail',
-    link: 'mailto:jnrahman12@gmail.com',
-    text: 'jnrahman12@gmail.com',
+    link: 'mailto:iam@noufal.dev',
+    text: 'iam@noufal.dev',
     icon: <EmailIcon />
   },
   {
