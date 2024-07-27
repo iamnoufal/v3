@@ -13,6 +13,7 @@ export default function Blog(props) {
         <meta name="description" content="Read, Inspire, Learn" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://noufal.dev/blog" />
         <meta property="og:title" content="Noufal's Blog" />
         <meta
           property="og:description"

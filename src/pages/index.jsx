@@ -20,6 +20,7 @@ export default function Home(props) {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://noufal.dev" />
         <meta property="og:title" content="Noufal's Portfolio" />
         <meta
           property="og:description"

@@ -18,6 +18,7 @@ export default function Post(props) {
         <meta name="description" content={props.excerpt} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href={"https://noufal.dev/blog/" + props.slug} />
         <meta property="og:title" content={props.title} />
         <meta property="og:description" content={props.excerpt} />
         <meta
